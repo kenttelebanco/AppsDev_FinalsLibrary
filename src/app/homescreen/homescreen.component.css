@@ -1,0 +1,37 @@
+body{
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/*FOR BUTTON*/
+button.main{
+    width: 20%;
+    height: 20%;
+    border: 0;
+}
+
+/*FOR IMAGE*/
+img {
+  border: 0;
+  outline: 0px solid transparent;
+}
+
+.img_feature{
+  width: 1em;
+  height: 1em;
+}
+
+/*FOR INPUT*/
+.input-group{
+  display: ruby-base;
+  border: 0;
+  outline: 0px solid transparent;
+}
+
+input.form-control{
+  width: 50%;
+}
+
+/*FOR TEXT*/
+#main_title{
+  margin-top: 11%;
+}

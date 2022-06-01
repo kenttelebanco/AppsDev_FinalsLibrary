@@ -1,0 +1,64 @@
+
+  body{
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  button.main{
+      width: 20%;
+      height: 20%;
+      border: 0;
+  }
+  
+  img {
+    border: 0;
+    outline: 0px solid transparent;
+  }
+  
+  .img_logo {
+    width: 14%;
+    padding: 5px;
+  }
+  
+  .img_feature{
+    width: 1em;
+    height: 1em;
+  }
+  .input-group{
+    display: ruby-base;
+    border: 0;
+    outline: 0px solid transparent;
+  }
+  
+  input.form-control{
+    width: 50%;
+  }
+  
+  #main_title{
+    margin-top: 11%;
+  }
+  
+  .nav-scroller {
+      position: relative;
+      z-index: 2;
+      height: 2.75rem;
+      overflow-y: hidden;
+    }
+  
+  .nav-scroller .nav {
+      display: flex;
+      flex-wrap: nowrap;
+      padding-bottom: 1rem;
+      margin-top: -1px;
+      overflow-x: auto;
+      text-align: center;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+    }
+
+  .library-header{
+      background-color: rgb(44, 88, 61);  }
+        
+  .row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
