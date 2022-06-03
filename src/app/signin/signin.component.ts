@@ -31,18 +31,21 @@ export class SigninComponent implements OnInit {
     this.userLogin.email = email;
     this.userLogin.password = password;
 
-    (await this.fireB.signIn(this.userLogin)).subscribe((user) => {
-      if (user?.password == password) {
-        
-        this.isSignedIn = true;
-        this.data = user;
-        console.log({success: true, data: this.data})
+    (await this.fireB.signIn(this.userLogin)).subscribe(async (result) => {
+      console.log(result);
+      
+      this.isSignedIn = result!.success;
+      if(this.isSignedIn){
+       
+        (await this.fireB.logUser(result.data!.id)).subscribe((user)=>{
+          console.log(this.fireB.currentUser);
+          this.fireB.updateUser(user!)
+          
+        });
       }
-      else {
-        
-        this.isSignedIn = false;
-        console.log('I am here now sad', this.isSignedIn)
-      }
+      
     })
   }
+  
+  
 }

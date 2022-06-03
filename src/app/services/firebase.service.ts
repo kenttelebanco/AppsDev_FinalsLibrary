@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
 import { docData } from '@angular/fire/firestore';
-import { filter, map, Observable } from 'rxjs';
+import { BehaviorSubject, filter, map, Observable } from 'rxjs';
 import { CRUDReturn } from '../models/crud_return.interface';
 import { User } from '../models/user';
 
@@ -10,6 +10,11 @@ import { User } from '../models/user';
 })
 export class FirebaseService {
   private usersCollection : AngularFirestoreCollection<User>
+  loggedUser = {} as User
+
+  private source = new BehaviorSubject<User>(this.loggedUser);
+  currentUser = this.source.asObservable();
+
   user$!: Observable<User[]>
   signedIn: boolean = false;
   constructor(private afDb: AngularFirestore) { 
@@ -38,10 +43,29 @@ export class FirebaseService {
         let fl = doc.filter((user)=>{
           return user.email === payload.email;
         });
-        return fl.length > 0 ? fl[0] : null;
+        
+        return fl[0].password == payload.password ? {success: true, data: fl[0]} : {success: true, data: null}
+        // return fl.length > 0 ? fl[0] : null;
       }
      }))
-     
-
   }
+
+  async logUser(id: string){
+    return this.user$.pipe(map((doc) =>{
+      {
+        let fl = doc.filter((user)=>{
+          return user.id === id;
+        });
+        
+        return fl.length > 0 ? fl[0] : null;
+        // return fl.length > 0 ? fl[0] : null;
+      }
+     }))
+  }
+
+  async updateUser(user: User){
+    this.source.next(user);
+  }
+
+  
 }
