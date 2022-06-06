@@ -16,10 +16,16 @@
               <form [formGroup]="regform">
                 <!-- Name input -->
                 <div class="form-outline mb-4">
-                  <label class="form-label" for="form3Example3">Full Name</label>
+                  <label class="form-label" for="form3Example3">First Name</label>
                     <input type="name" id="form3Example3" class="form-control form-control-md"
                       placeholder="Enter Last Name, First Name, Middle Name" formControlName="fname" #fname/>
                   </div>
+                    <div class="form-outline mb-4">
+                      <label class="form-label" for="form3Example3">Last Name</label>
+                        <input type="name" id="form3Example3" class="form-control form-control-md"
+                          placeholder="Enter Last Name, First Name, Middle Name" formControlName="lname" #lname/>
+                      </div>
+    
 
                 <!-- Email input -->
                 <div class="form-outline mb-4">
