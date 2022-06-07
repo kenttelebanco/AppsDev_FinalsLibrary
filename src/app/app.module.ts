@@ -5,10 +5,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { LibraryModule } from './library.module';
-import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import {AngularFireModule} from '@angular/fire/compat';
+import { HotToastModule } from '@ngneat/hot-toast';
+import { AuthModule, getAuth, provideAuth } from '@angular/fire/auth';
+import { FirebaseAppModule, provideFirebaseApp } from '@angular/fire/app';
+import { initializeApp } from '@firebase/app';
+import { AuthenticationService } from './services/authentication.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,8 +26,14 @@ import {AngularFireModule} from '@angular/fire/compat';
     LibraryModule,
     AngularFireModule.initializeApp(environment.firebase),
     provideFirestore(() => getFirestore()),
+    HotToastModule.forRoot(),
+    provideFirebaseApp(() =>initializeApp(environment.firebase)),
+    provideAuth(()=>getAuth()),
+    
   ],
-  providers: [],
+  providers: [
+    AuthenticationService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

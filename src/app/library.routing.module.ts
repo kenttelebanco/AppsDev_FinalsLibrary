@@ -2,24 +2,33 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomescreenComponent } from './homescreen/homescreen.component';
 import { RegisterComponent } from './register/register.component';
-import { SigninComponent } from './signin/signin.component';
 import { UserBorrowComponent } from './user-services/user-borrow/user-borrow.component';
 import { UserComponent } from './user/user.component';
+import { UserSigninComponent } from './user-services/user-signin/user-signin.component';
+import { AdminComponent } from './admin/admin.component';
+import { AdminSigninComponent } from './admin-services/admin-signin/admin-signin.component';
+import { AdminRegisterComponent } from './admin-services/admin-register/admin-register.component';
 
 
 
 const routes: Routes = [
 {path: '', redirectTo: 'homescreen', pathMatch: 'full' },
-{path: 'reg', redirectTo: ' /app-register', pathMatch: 'full'},
-{path: 'sign', redirectTo: ' /app-signin', pathMatch: 'full'},
-{path: 'user', redirectTo: ' /app-user', pathMatch: 'full'},
-{path: 'ub', redirectTo: ' /user-borrow', pathMatch: 'full'},
-
 {path: 'homescreen', component:HomescreenComponent},
 {path: 'app-register', component: RegisterComponent},
-{path: 'app-signin', component: SigninComponent},
+
+//FOR USER
 {path: 'app-user', component: UserComponent},
 {path: 'user-borrow', component: UserBorrowComponent},
+{path: 'user-signin', component: UserSigninComponent},
+
+//FOR ADMIN
+{path: 'app-admin', component: AdminComponent},
+{path: 'admin-signin', component: AdminSigninComponent},
+{path: 'admin-register', component: AdminRegisterComponent},
+
+
+
+
 
 ];
 

@@ -11,20 +11,19 @@
               <img src="https://cdn.dribbble.com/users/1010637/screenshots/11280628/media/221251d3281dd7770a2a78abc8bdcc78.png?compress=1&resize=400x300&vertical=top"
                 class="img-fluid" alt="Sample image">
             </div>
-
+                
             <div class="card col-md-8 col-lg-6 col-xl-4">
               <form [formGroup]="regform">
-                <!-- Name input -->
-                <div class="form-outline mb-4">
+              <div class="form-outline mb-4">
                   <label class="form-label" for="form3Example3">First Name</label>
                     <input type="name" id="form3Example3" class="form-control form-control-md"
-                      placeholder="Enter Last Name, First Name, Middle Name" formControlName="fname" #fname/>
-                  </div>
-                    <div class="form-outline mb-4">
+                      placeholder="First Name" formControlName="fname" #fname/>
+              </div>
+              <div class="form-outline mb-4">
                       <label class="form-label" for="form3Example3">Last Name</label>
                         <input type="name" id="form3Example3" class="form-control form-control-md"
-                          placeholder="Enter Last Name, First Name, Middle Name" formControlName="lname" #lname/>
-                      </div>
+                        placeholder="Last Name" formControlName="lname" #lname/>
+              </div>
     
 
                 <!-- Email input -->
@@ -47,7 +46,7 @@
                 <div class="text-center text-lg-start mt-4 pt-2">
                   <button type="button" class="btn btn-primary btn-lg"
                     style="padding-left: 2.5rem; padding-right: 2.5rem;" [disabled]="!regform.valid" routerLinkActive="active" 
-                    routerLink="/app-user" (click)="onRegister(email.value,password.value, fname.value)">Register Account</button>
+                    routerLink="/app-user" (click)="onRegister(email.value,password.value, fname.value, lname.value)">Register Account</button>
                 </div>
               </form>
             </div>          
