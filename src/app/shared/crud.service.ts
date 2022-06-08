@@ -110,6 +110,17 @@ export class CRUDService {
     );
   }
 
+  getBorrowedBooks(){
+    return this.books$.pipe(map((Obs)=>{
+      {
+        let fl = Obs.filter((book) => {
+          return book.status === 'BORROWED';
+        });
+        return fl.length > 0 ? {success: true, data: fl} : {success: false, data: []}
+      }
+    }))
+  }
+
   //BOOKS
   addBook(book: Book) {
     book.id = this.afDb.createId();
