@@ -2,8 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
-import { RegisterComponent } from './register/register.component';
 import { HomescreenComponent } from './homescreen/homescreen.component';
 import { LibraryRoutingModule } from './library.routing.module';
 import { UserComponent } from './user/user.component';
@@ -17,34 +15,39 @@ import { AuthenticationService } from './services/authentication.service';
 import { AdminComponent } from './admin/admin.component';
 import { AdminSigninComponent } from './admin-services/admin-signin/admin-signin.component';
 import { AdminRegisterComponent } from './admin-services/admin-register/admin-register.component';
+import { AdminAddComponent } from './admin-services/admin-add/admin-add.component';
+import { UserRegisterComponent } from './user-services/user-register/user-register.component';
+import { UserReturnComponent } from './user-services/user-return/user-return.component';
+import { ReturnCardComponent } from './user-services/user-return/return-card/return-card.component';
 
 
 @NgModule({
   declarations: [
       HomescreenComponent,
       HeadnavComponent,
-      FooternavComponent,
-      RegisterComponent,
-      
+      FooternavComponent,      
 
       //FOR USERS
       UserComponent,
       UsernavComponent,
       UserSigninComponent,
+      UserRegisterComponent,
       UserBorrowComponent,
       BorrowCardComponent,
+      UserReturnComponent,
+      ReturnCardComponent,
 
       //FOR ADMIN
       AdminComponent,
       AdminSigninComponent,
       AdminRegisterComponent,
+      AdminAddComponent,
   ],
   imports: [
     CommonModule,
     LibraryRoutingModule,
     FormsModule,
-    ReactiveFormsModule,
-  
+    ReactiveFormsModule,  
   ],
   exports: [],
   providers:[AuthenticationService]

@@ -8,7 +8,7 @@ import { FirebaseService } from 'src/app/services/firebase.service';
 @Component({
   selector: 'admin-signin',
   templateUrl: './admin-signin.component.html',
-  styleUrls: ['./admin-signin.component.css']
+  styleUrls: ['./admin-signin.component.css'],
 })
 export class AdminSigninComponent implements OnInit {
 
@@ -32,15 +32,21 @@ export class AdminSigninComponent implements OnInit {
 
     (await this.fireB.signInAdmin(this.adminLogin)).subscribe(async (result) => {
       console.log(result);
-      this.router.navigate(['/app-admin']);
-     
-      
+      this.fireB.displayName = result.data?.fname
+
+      //this is to validate if email or password wont match in our firebase//
+        if(result.data == null){
+          this.router.navigate(['/admin-signin']);
+          alert("Invalid Email or Password. Try Again.")}
+        else
+          this.router.navigate(['/app-admin']);
+
       this.isSignedIn = result!.success;
       if(this.isSignedIn){
        
-        (await this.fireB.logUser(result.data!.id)).subscribe((user)=>{
-          console.log(this.fireB.currentUser);
-          this.fireB.updateUser(user!)
+        (await this.fireB.logAdmin(result.data!.id)).subscribe((user)=>{
+          console.log(this.fireB.currentAdmin);
+          this.fireB.updatAdmin(user!)
           
         });
       }

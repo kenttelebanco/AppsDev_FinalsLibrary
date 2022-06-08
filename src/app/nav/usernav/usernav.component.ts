@@ -19,6 +19,7 @@ export class UsernavComponent implements OnInit {
     this.display = this.fireB.displayName;
   })  
   }
+  
   ngOnInit(): void {
   }
 

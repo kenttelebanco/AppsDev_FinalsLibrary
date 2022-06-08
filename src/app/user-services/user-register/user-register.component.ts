@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { Validators, FormBuilder } from '@angular/forms';
 import { UserRegister } from 'src/app/models/auth.interface';
-import { FirebaseService } from '../services/firebase.service';
+import { FirebaseService } from 'src/app/services/firebase.service';
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  selector: 'user-register',
+  templateUrl: './user-register.component.html',
+  styleUrls: ['./user-register.component.css']
 })
-export class RegisterComponent implements OnInit {
+export class UserRegisterComponent implements OnInit {
+
   isSignedIn = false;
   role = 'user';
   userRegister = {} as UserRegister;
@@ -36,4 +37,6 @@ export class RegisterComponent implements OnInit {
     console.log(output);
     this.isSignedIn = output.success;
   }
+
+  
 }
