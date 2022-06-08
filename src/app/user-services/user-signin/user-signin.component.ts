@@ -1,19 +1,15 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Validators, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserLogin } from 'src/app/models/auth.interface';
 import { User } from 'src/app/models/user';
-import { AuthenticationService } from 'src/app/services/authentication.service';
 import { FirebaseService } from 'src/app/services/firebase.service';
-import { HotToastService} from '@ngneat/hot-toast';
-import { authState } from '@angular/fire/auth';
-import { Observable } from 'rxjs';
+
 
 @Component({
   selector: 'user-signin',
   templateUrl: './user-signin.component.html',
   styleUrls: ['./user-signin.component.css'],
-  providers: [AuthenticationService]
 })
 export class UserSigninComponent implements OnInit {
 
@@ -38,16 +34,21 @@ export class UserSigninComponent implements OnInit {
     (await this.fireB.signInUser(this.userLogin)).subscribe(async (result) => {
       console.log(result);
       this.fireB.displayName = result.data?.fname
-      this.router.navigate(['/app-user']);
+      if(result.data == null){
+        this.router.navigate(['/user-signin']);
+        alert("Invalid Email or Password. Try Again.")}
+      else
+        this.router.navigate(['/app-user']);
+
+      this.isSignedIn = result!.success;
+      if(this.isSignedIn){
+       
+        (await this.fireB.logUser(result.data!.id)).subscribe((user)=>{
+          console.log(this.fireB.currentUser);
+          this.fireB.updateUser(user!)
+          
+        });
+      }
     })
   }
-
-  getUserLoggedInStatus() {
-    //console.log('returning' + this.loggedInUser);
-    this.fireB.currentUser.subscribe((user)=>{
-    console.log(user.fname + "here");
-    return user.fname    
-  })
-    }
-
 }
