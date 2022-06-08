@@ -49,7 +49,12 @@ export class CRUDService {
               user?.BRWD_books?.push(fl[0])
               let update = {} as User
               update = user!;
+              let update2 = {} as Book
+              fl[0].status = 'BORROWED';
+              update2 = fl[0]
+              
               this.usersCollection.doc(user?.id).update(update)
+              this.booksCollection.doc(fl[0].id).update(update2)
               return {success: true, data: 'Book status changed - Borrowed'}
             })
           }
@@ -81,7 +86,11 @@ export class CRUDService {
               user?.BRWD_books?.splice(user.BRWD_books.indexOf(fl[0]))
               let update = {} as User
               update = user!;
+              let update2 = {} as Book
+              fl[0].status = 'AVAILABLE';
+              update2 = fl[0]
               this.usersCollection.doc(user?.id).update(update)
+              this.booksCollection.doc(fl[0].id).update(update2)
               return {success: true, data: 'Book status changed - Returned'}
             })
           }
