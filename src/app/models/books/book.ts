@@ -8,6 +8,7 @@ enum Book_Status{
 
 export interface Book {
     id: string;
+    bookid: string;
     name: string;
     status: string;
     published: string;

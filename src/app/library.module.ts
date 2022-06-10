@@ -6,7 +6,6 @@ import { HomescreenComponent } from './homescreen/homescreen.component';
 import { LibraryRoutingModule } from './library.routing.module';
 import { UserComponent } from './user/user.component';
 import { UserBorrowComponent } from './user-services/user-borrow/user-borrow.component';
-import { BorrowCardComponent } from './user-services/user-borrow/borrow-card/borrow-card.component';
 import { HeadnavComponent } from './nav/headnav/headnav.component';
 import { FooternavComponent } from './nav/footernav/footernav.component';
 import { UsernavComponent } from './nav/usernav/usernav.component';
@@ -33,7 +32,6 @@ import { ReturnCardComponent } from './user-services/user-return/return-card/ret
       UserSigninComponent,
       UserRegisterComponent,
       UserBorrowComponent,
-      BorrowCardComponent,
       UserReturnComponent,
       ReturnCardComponent,
 

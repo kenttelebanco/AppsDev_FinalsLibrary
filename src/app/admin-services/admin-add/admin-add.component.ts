@@ -10,6 +10,7 @@ import { CRUDService } from 'src/app/shared/crud.service';
 export class AdminAddComponent implements OnInit {
   today: number = Date.now();
   book = {} as Book;
+
   addForm = this.fb.group({
     bookid: ['', Validators.required],
     title: ['', Validators.required],
@@ -28,12 +29,14 @@ export class AdminAddComponent implements OnInit {
 
   addBook(bookid: string, title: string, author: string, published: string, status: string){
     this.book.id = bookid;
+    this.book.bookid = bookid;
     this.book.name = title;
     this.book.author = author;
     this.book.published = published;
     this.book.status = status.toUpperCase();
 
     this.crud.addBook(this.book);
+    alert("Successfully Added");
   }
 
   removeBook(bookid:string){
