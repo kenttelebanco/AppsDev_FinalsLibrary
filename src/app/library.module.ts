@@ -17,7 +17,6 @@ import { AdminRegisterComponent } from './admin-services/admin-register/admin-re
 import { AdminAddComponent } from './admin-services/admin-add/admin-add.component';
 import { UserRegisterComponent } from './user-services/user-register/user-register.component';
 import { UserReturnComponent } from './user-services/user-return/user-return.component';
-import { ReturnCardComponent } from './user-services/user-return/return-card/return-card.component';
 
 
 @NgModule({
@@ -33,7 +32,6 @@ import { ReturnCardComponent } from './user-services/user-return/return-card/ret
       UserRegisterComponent,
       UserBorrowComponent,
       UserReturnComponent,
-      ReturnCardComponent,
 
       //FOR ADMIN
       AdminComponent,

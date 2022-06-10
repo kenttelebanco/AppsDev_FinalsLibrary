@@ -35,6 +35,11 @@ body{
   input.form-control{
     width: 70%;
   }
+
+  select{
+    width: 50%;
+    margin-left: 10px;
+  }
   
 /*FOR TITLE*/
   #main_title{

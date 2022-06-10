@@ -38,15 +38,15 @@
               </div>
         </div>
 
-        <div class="row">
-              <div class="col">
-                <label for="status">Status</label>
-                <input type="text" class="form-control" id="status" formControlName="status" #status/>
-              </div>
-          </div>
+          <div class="row mt-3">
+            <label for="published">Set Status</label>
+            <select class="form-control" id="exampleCategory" required formControlName="status" #status >
+            <option *ngFor="let status of setStatus">{{status.type}}</option>
+          </select>
+        </div>
        
 
-        <button type="submit" class="btn btn-success mt-3"  [disabled]="!addForm.valid" (click)="addBook(bookid.value, title.value, author.value, published.value, status.value)">
+        <button type="submit" class="btn btn-success mt-3" [disabled]="!addForm.valid" (click)="addBook(bookid.value, title.value, author.value, published.value, status.value)">
           Submit
         </button>
       </form>
