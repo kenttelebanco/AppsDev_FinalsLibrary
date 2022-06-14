@@ -16,7 +16,7 @@
               <div class="book-card">
 
                 <div class="card" style="width: 18rem;" *ngFor="let book of bookusers$">
-                    <img class="card-img-top" src="https://hr.komar.edu.iq/wp-content/uploads/sites/10/2021/05/englishhhhh.jpg" alt="Card image cap">
+                    <img class="card-img-top" src="https://cdn3d.iconscout.com/3d/premium/thumb/book-stack-5498522-4577227.png" alt="Card image cap">
                     <div class="card-body">
                       <ul class="list-group list-group-flush">
                 
@@ -46,7 +46,8 @@
                           </li>
                     
                       </ul>
-                      <button class="btn btn-success">Borrow Book</button>
+                      <button class="btn btn-success" [disabled]="book.status=='BORROWED'">Borrow Book</button>
+                      <button class="btn btn-danger" [disabled]="book.status=='AVAILABLE'">Return Book</button>
                     </div>
                   </div>
 

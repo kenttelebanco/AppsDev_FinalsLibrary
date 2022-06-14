@@ -9,10 +9,9 @@ body{
 }
 
 /*FOR BUTTON*/
-button.main{
-    width: 20%;
-    height: 20%;
+button{
     border: 0;
+    margin-right: 10px;
 }
 
 /*FOR IMAGES*/
