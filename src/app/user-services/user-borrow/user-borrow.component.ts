@@ -47,8 +47,10 @@ export class UserBorrowComponent implements OnInit {
       this.crud.updateBook(this.data, book);
       console.log ('Book Borrowed by' + this.data!.fname);
     }
-    else
+    else{
       console.log('Maximum number of books to borrow!');
+      alert('Maximum number of books to borrow!');
+    }
         
        
       

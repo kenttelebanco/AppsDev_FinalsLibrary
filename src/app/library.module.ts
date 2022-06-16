@@ -18,6 +18,8 @@ import { AdminAddComponent } from './admin-services/admin-add/admin-add.componen
 import { UserRegisterComponent } from './user-services/user-register/user-register.component';
 import { UserReturnComponent } from './user-services/user-return/user-return.component';
 import { AdminRemoveComponent } from './admin-services/admin-remove/admin-remove.component';
+import { AdminCheckborrowComponent } from './admin-services/admin-checkborrow/admin-checkborrow.component';
+import { AdminnavComponent } from './nav/adminnav/adminnav.component';
 
 
 @NgModule({
@@ -39,7 +41,9 @@ import { AdminRemoveComponent } from './admin-services/admin-remove/admin-remove
       AdminSigninComponent,
       AdminRegisterComponent,
       AdminAddComponent,
-      AdminRemoveComponent
+      AdminRemoveComponent,
+      AdminCheckborrowComponent,
+      AdminnavComponent
   ],
   imports: [
     CommonModule,

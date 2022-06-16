@@ -120,7 +120,7 @@ export class CRUDService {
           return fl.length > 0
             ? {
                 success: true,
-                data: { username: fl[0].fname, books: fl[0].BRWD_books },
+                data: { username: fl[0].fname+fl[0].lname, books: fl[0].BRWD_books },
               }
             : { success: false, data: null };
         }

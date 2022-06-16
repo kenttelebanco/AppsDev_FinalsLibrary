@@ -5,7 +5,7 @@
     <main>
     <div class="library-header bg-cover">
       <div class="header-mask py-2 text-white">
-          <h1 class="display-4 font-weight-bold" style="margin-left:13px">Remove Books</h1>
+          <h1 class="display-4 font-weight-bold" style="margin-left:13px">Check Books</h1>
           <p class="time mt-2" style="margin-left:13px">As Of {{today | date:'fullDate'}} {{today | date:'h:mm:ss a'}} (Phillipine Time)</p>
       </div>
     </div>
@@ -16,40 +16,45 @@
     
             <div class="row">
                 <div class="col">
-                    <label for="bookid">Insert Database ID</label>
-                    <input type="text" class="form-control" id="bookid" formControlName="bookid" #bookid/>
+                    <label for="bookid">Enter UserID To Check</label>
+                    <input type="text" class="form-control" id="bookid" formControlName="bookid" #userid/>
                   </div>
             </div>
     
-            <button type="submit" class="btn btn-danger mt-3 mb-5" [disabled]="!removeForm.valid" (click)="removeBook(bookid.value)">
-              Remove
+            <button type="submit" class="btn btn-primary mt-3 mb-5" [disabled]="!removeForm.valid" (click)="getUserBRW(userid.value)">
+              Check User
             </button>
+            <button type="submit" class="btn btn-danger mt-3 mb-5" style="margin-left: 10px;" [disabled]="!removeForm.valid" (click)="clearEntry()">
+                Clear
+              </button>
           </form>
         </div>
         
       </div>
-      <h4>Book Archives</h4>
-      <table class="book-table mt-3">
 
+      <table class="book-table">
+        <h4>Borrowed Book Archives</h4>
+        <h5 *ngIf="bookname ==='General'">User: {{bookname}}</h5>
+        <h5 *ngIf="bookname !=='General'">User: {{bookname}}</h5>
         <tr><td><b><a>Author</a></b></td>
 
             <td><b><a>Title</a></b></td>
 
-            <td><b><a>Publsihed</a></b></td>
+            <td><b><a>Database ID</a></b></td>
 
             <td><b><a>Status</a></b></tr>
 
-        <ng-container *ngFor="let group of bookusers$">
+        <ng-container *ngFor="let group of bookusers">
 
             <tr><td><a>{{group.author}}</a></td>
 
             <td><a>{{group.name}}</a></td>
 
-            <td><b><a>{{group.published}}</a></b></td>
+            <td><a>{{group.id}}</a></td>
 
             <td><a>{{group.status}}</a></td></tr>
 
-        </ng-container>
+        </ng-container>  
    </table>
     </main>
       <app-footernav></app-footernav>

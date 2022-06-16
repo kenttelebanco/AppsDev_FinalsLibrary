@@ -11,6 +11,7 @@ import { AdminAddComponent } from './admin-services/admin-add/admin-add.componen
 import { UserRegisterComponent } from './user-services/user-register/user-register.component';
 import { UserReturnComponent } from './user-services/user-return/user-return.component';
 import { AdminRemoveComponent } from './admin-services/admin-remove/admin-remove.component';
+import { AdminCheckborrowComponent } from './admin-services/admin-checkborrow/admin-checkborrow.component';
 
 
 
@@ -31,6 +32,7 @@ const routes: Routes = [
 {path: 'admin-register', component: AdminRegisterComponent},
 {path: 'admin-add', component: AdminAddComponent},
 {path: 'admin-remove', component: AdminRemoveComponent},
+{path: 'admin-check', component: AdminCheckborrowComponent},
 
 
 

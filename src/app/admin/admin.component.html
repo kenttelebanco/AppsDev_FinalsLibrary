@@ -1,6 +1,6 @@
 <body>
     <div class="container py-3">
-    <app-usernav></app-usernav>
+    <app-adminnav></app-adminnav>
       <main>
         <div class="container-fluid">
             <div class="row">
@@ -47,21 +47,10 @@
                         <div class="icon">
                             <i class="fa fa-book" aria-hidden="true"></i>
                         </div>
-                        <a class="card-box-footer">View More <i class="fa fa-arrow-circle-right"></i></a>
+                        <a class="card-box-footer" routerLinkActive="active" routerLink="/admin-check">View More <i class="fa fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="card-box bg-orange">
-                        <div class="inner">
-                            <h3>Check User</h3>
-                            <p>Check User Borrowed Books</p>
-                        </div>
-                        <div class="icon">
-                            <i class="fas fa-newspaper" aria-hidden="true"></i>
-                        </div>
-                        <a class="card-box-footer">View More <i class="fa fa-arrow-circle-right"></i></a>
-                    </div>
-                </div>
+
                 <div class="col-lg-3 col-sm-6">
                     <div class="card-box bg-red">
                         <div class="inner">
@@ -74,8 +63,20 @@
                         <a class="card-box-footer" routerLinkActive="active" routerLink="/admin-remove">View More <i class="fa fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
+
+                <div class="col-lg-3 col-sm-6">
+                    <div class="card-box bg-orange">
+                        <div class="inner">
+                            <h3>Book Database</h3>
+                            <p>Explore the Archives</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fas fa-newspaper" aria-hidden="true"></i>
+                        </div>
+                        <a class="card-box-footer">View More <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>            
             </div>
-    
         </div>
         </main>
         <app-footernav></app-footernav>

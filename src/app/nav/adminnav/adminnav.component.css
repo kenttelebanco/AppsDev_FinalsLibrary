@@ -1,0 +1,22 @@
+/* FOR IMAGES*/
+.img_logo {
+    width: 14%;
+    padding: 5px;
+  }
+
+/* FOR DROPDOWN*/
+.nav-pills{
+  color: black;
+}
+
+#user-menu{
+  color: black;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.submenu{
+  margin-left: 10px;
+}
