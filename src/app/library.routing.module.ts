@@ -9,7 +9,6 @@ import { AdminSigninComponent } from './admin-services/admin-signin/admin-signin
 import { AdminRegisterComponent } from './admin-services/admin-register/admin-register.component';
 import { AdminAddComponent } from './admin-services/admin-add/admin-add.component';
 import { UserRegisterComponent } from './user-services/user-register/user-register.component';
-import { UserReturnComponent } from './user-services/user-return/user-return.component';
 import { AdminRemoveComponent } from './admin-services/admin-remove/admin-remove.component';
 import { AdminCheckborrowComponent } from './admin-services/admin-checkborrow/admin-checkborrow.component';
 
@@ -22,7 +21,6 @@ const routes: Routes = [
 //FOR USER
 {path: 'app-user', component: UserComponent},
 {path: 'user-borrow', component: UserBorrowComponent},
-{path: 'user-return', component: UserReturnComponent},
 {path: 'user-signin', component: UserSigninComponent},
 {path: 'user-register', component: UserRegisterComponent},
 

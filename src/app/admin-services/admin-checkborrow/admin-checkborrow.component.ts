@@ -9,11 +9,9 @@ import { CRUDService } from '../../shared/crud.service';
   styleUrls: ['./admin-checkborrow.component.css']
 })
 export class AdminCheckborrowComponent implements OnInit {
-
   today: number = Date.now();
   book = {} as Book;
   bookusers: any[]= [];
-  userborrowed: any[]= [];
   bookname = "General Users";
 
   removeForm = this.fb.group({
@@ -25,18 +23,12 @@ export class AdminCheckborrowComponent implements OnInit {
 
   ngOnInit(): void {
     this.crud.getBorrowedBooks().subscribe((val) => {
-      console.log(val)
       this.bookusers = val.data
-    });
-
-    this.crud.getUserBorrowedBooks("AWdSPSJ8djCF47MzVZmk").subscribe((val) => {
-      console.log(val)
     });
   }
 
   getUserBRW(userid: string){
     this.crud.getUserBorrowedBooks(userid).subscribe((val) => {
-      console.log(val)
       this.bookusers = val.data.books
       this.bookname = val.data.username
     });

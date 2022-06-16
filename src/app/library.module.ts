@@ -16,7 +16,6 @@ import { AdminSigninComponent } from './admin-services/admin-signin/admin-signin
 import { AdminRegisterComponent } from './admin-services/admin-register/admin-register.component';
 import { AdminAddComponent } from './admin-services/admin-add/admin-add.component';
 import { UserRegisterComponent } from './user-services/user-register/user-register.component';
-import { UserReturnComponent } from './user-services/user-return/user-return.component';
 import { AdminRemoveComponent } from './admin-services/admin-remove/admin-remove.component';
 import { AdminCheckborrowComponent } from './admin-services/admin-checkborrow/admin-checkborrow.component';
 import { AdminnavComponent } from './nav/adminnav/adminnav.component';
@@ -34,7 +33,6 @@ import { AdminnavComponent } from './nav/adminnav/adminnav.component';
       UserSigninComponent,
       UserRegisterComponent,
       UserBorrowComponent,
-      UserReturnComponent,
 
       //FOR ADMIN
       AdminComponent,

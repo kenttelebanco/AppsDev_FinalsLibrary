@@ -9,7 +9,6 @@ import { FirebaseService } from 'src/app/services/firebase.service';
   styleUrls: ['./admin-register.component.css']
 })
 export class AdminRegisterComponent implements OnInit {
-
   isSignedIn = false;
   role = 'admin';
   adminRegister = {} as AdminRegister;

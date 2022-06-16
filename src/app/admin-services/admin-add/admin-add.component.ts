@@ -47,16 +47,4 @@ export class AdminAddComponent implements OnInit {
     alert("Successfully Added");
   }
 
-  removeBook(bookid:string){
-    return this.crud.removeBook(bookid);
-  }
-
-  getUserBRW(userid: string){
-    return this.crud.getUserBorrowedBooks(userid)
-  }
-
-  getBRW(){
-    return this.crud.getBorrowedBooks();
-  }
-
 }
