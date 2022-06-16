@@ -14,9 +14,7 @@ export class UserComponent implements OnInit {
 
   constructor(public fireB: FirebaseService) { 
     this.fireB.currentUser.subscribe((user)=>{
-    console.log(user);
     this.data = user;
-
     this.display = this.fireB.displayName;
   })  
   }
@@ -24,11 +22,11 @@ export class UserComponent implements OnInit {
   ngOnInit(): void {  
   }
 
-  ngOnChanges(): void {
-    this.fireB.currentUser.subscribe((user)=>{
-      console.log(user);
-      this.data = user;
-    })
-  }
+  // ngOnChanges(): void {
+  //   this.fireB.currentUser.subscribe((user)=>{
+  //     console.log(user);
+  //     this.data = user;
+  //   })
+  // }
 
 }

@@ -32,7 +32,8 @@ export class UserRegisterComponent implements OnInit {
     this.userRegister.lname = lname;
     this.userRegister.name = fname + lname;
     this.userRegister.email = email;
-    this.userRegister.password = password; 
+    this.userRegister.password = password;
+
     var output = await this.fireB.registerUser(this.userRegister);
     console.log(output);
     this.isSignedIn = output.success;

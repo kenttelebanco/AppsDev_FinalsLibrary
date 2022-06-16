@@ -39,8 +39,9 @@ export class FirebaseService {
   //FOR USER
   async registerUser(payload: any): Promise<CRUDReturn>{
     try{
-      payload.key = this.afDb.createId();
-      this.usersCollection.doc(payload.key).set(payload);
+      payload.BRWD_books = [];
+      payload.id = this.afDb.createId();
+      this.usersCollection.doc(payload.id).set(payload);
       return {
         success: true,
         data: payload,
@@ -84,8 +85,8 @@ export class FirebaseService {
   //FOR ADMIN
   async registerAdmin(payload: any): Promise<CRUDReturn>{
     try{
-      payload.key = this.afDb.createId();
-      this.adminCollection.doc(payload.key).set(payload);
+      payload.id = this.afDb.createId();
+      this.adminCollection.doc(payload.id).set(payload);
       return {
         success: true,
         data: payload,

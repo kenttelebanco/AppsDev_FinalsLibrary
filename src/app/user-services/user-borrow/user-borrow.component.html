@@ -46,8 +46,8 @@
                           </li>
                     
                       </ul>
-                      <button class="btn btn-success" [disabled]="book.status=='BORROWED'">Borrow Book</button>
-                      <button class="btn btn-danger" [disabled]="book.status=='AVAILABLE'">Return Book</button>
+                      <button class="btn btn-success" (click)="borrowBook(book)" [disabled]="book.status=='BORROWED'">Borrow Book</button>
+                      <button class="btn btn-danger" (click)="returnBook(book)"[disabled]="book.status=='AVAILABLE'">Return Book</button>
                     </div>
                   </div>
 

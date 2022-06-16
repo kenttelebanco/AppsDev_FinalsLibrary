@@ -11,11 +11,9 @@ export class UsernavComponent implements OnInit {
   data = {} as User | null;
   display:any;
 
-  constructor(public fireB: FirebaseService) { 
+  constructor(private fireB: FirebaseService) { 
     this.fireB.currentUser.subscribe((user)=>{
-    console.log(user);
     this.data = user;
-
     this.display = this.fireB.displayName;
   })  
   }

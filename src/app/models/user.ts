@@ -6,5 +6,5 @@ export interface User {
     lname: string;
     email: string;
     password: string;
-    BRWD_books?: [Book, Book, Book, Book, Book];
+    BRWD_books?: Book[];
 }
