@@ -1,3 +1,5 @@
+import { Book } from "../models/books/book";
+
 //this is just only for unit testing
 export const Books = [
     {
@@ -15,6 +17,6 @@ export const Books = [
     status: 'Unavailable',
     published: 'December 2020',
     author: 'Kent Telebanco',
-}
+    },
   ];
   
