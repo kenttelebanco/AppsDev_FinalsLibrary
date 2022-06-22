@@ -1,4 +1,4 @@
-import { TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 import { provideAuth, getAuth } from '@angular/fire/auth';
 import { AngularFireModule } from '@angular/fire/compat';
@@ -16,6 +16,7 @@ describe('CRUDService', () => {
   let service: CRUDService;
   let afs: AngularFirestore;
   const data = from(Books);
+<<<<<<< Updated upstream
   const data2 = from(Users);
 
   const insideCollection = jasmine.createSpyObj('collection', [
@@ -51,6 +52,9 @@ describe('CRUDService', () => {
   insideCollection.doc.and.returnValue(insideDocs);
   insideDocs.get.and.returnValue(data);
   insideDocs2.get.and.returnValue(data2);
+=======
+  let fixture: ComponentFixture<CRUDService>;
+>>>>>>> Stashed changes
 
 
   beforeEach(async () => {
@@ -81,6 +85,7 @@ describe('CRUDService', () => {
 
     expect(spy).toHaveBeenCalledWith('1');
   });
+<<<<<<< Updated upstream
 
   it('should get all books', (done: DoneFn) => {
     let data: Array<any> = [];
@@ -150,3 +155,5 @@ describe('CRUDService', () => {
     expect(spy).toHaveBeenCalledWith(data2[0].id);
   });
 });
+=======
+>>>>>>> Stashed changes

@@ -11,21 +11,16 @@ export class AdminComponent implements OnInit {
   data = {} as User | null;
   display:any;
 
-  constructor(public fireB: FirebaseService) { 
-    this.fireB.currentAdmin.subscribe((user)=>{
-    console.log(user);
-    this.data = user;
-    this.display = this.fireB.displayName;
-  })    
+  constructor(public fireB: FirebaseService) {   
   }
 
-  ngOnInit(): void {  
+  ngOnInit(): void { 
+    this.fireB.currentAdmin.subscribe((user)=>{
+      console.log(user);
+      this.display = this.fireB.displayName;
+    }) 
   }
 
   ngOnChanges(): void {
-    this.fireB.currentAdmin.subscribe((user)=>{
-      console.log(user);
-      this.data = user;
-    })
   }
 }

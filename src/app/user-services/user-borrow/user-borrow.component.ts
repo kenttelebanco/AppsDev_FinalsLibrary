@@ -12,6 +12,9 @@ import { CRUDService } from 'src/app/shared/crud.service';
   styleUrls: ['./user-borrow.component.css'],
 })
 export class UserBorrowComponent implements OnInit {
+  static ngOnInit() {
+    throw new Error('Method not implemented.');
+  }
   data = {} as User;
   bookusers$: Book[] = [];
   editing = false;
@@ -73,9 +76,5 @@ export class UserBorrowComponent implements OnInit {
         
      
     // Returns ex. {success: true, data: 'Book status changed - AVAILABLE"}
-  }
-
-  onCancelBooks(value: any) {
-    this.editing = value;
   }
 }
