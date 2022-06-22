@@ -147,6 +147,7 @@ export class CRUDService {
   addBook(book: Book) {
     book.id = this.afDb.createId();
     this.booksCollection.doc(book.id).set(book);
+    return this.books$;
   }
 
   getBooks() {
@@ -174,5 +175,6 @@ export class CRUDService {
 
   removeBook(bookID: string) {
     this.booksCollection.doc(bookID).delete();
+    return this.books$;
   }
 }
