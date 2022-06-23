@@ -12,13 +12,14 @@ export class UsernavComponent implements OnInit {
   display:any;
 
   constructor(private fireB: FirebaseService) { 
-    this.fireB.currentUser.subscribe((user)=>{
-    this.data = user;
-    this.display = this.fireB.displayName;
-  })  
+   
   }
   
   ngOnInit(): void {
+    this.fireB.currentUser.subscribe((user)=>{
+      this.data = user;
+      this.display = this.fireB.displayName;
+    })  
   }
 
 }

@@ -16,30 +16,30 @@
 
         <div class="row">
             <div class="col">
-                <label for="bookid">Book ID</label>
+                <label for="bookid" id="bookid">Book ID</label>
                 <input type="text" class="form-control" id="bookid" formControlName="bookid" #bookid/>
               </div>
 
             <div class="col">
-              <label for="title">Title</label>
+              <label for="title" id="title">Title</label>
               <input type="text" class="form-control" id="title" formControlName="title" #title/>
             </div>
         </div>
 
         <div class="row">
             <div class="col">
-                <label for="author">Author</label>
+                <label for="author" id="author">Author</label>
                 <input type="text" class="form-control" id="author" formControlName="author" #author/>
               </div>
 
               <div class="col">
-                <label for="published">Published</label>
+                <label for="published" id="published">Published</label>
                 <input type="text" class="form-control" id="published" formControlName="published" #published/>
               </div>
         </div>
 
           <div class="row mt-3">
-            <label for="published">Set Status</label>
+            <label for="published" id="setstatus">Set Status</label>
             <select class="form-control" id="exampleCategory" required formControlName="status" #status >
             <option *ngFor="let status of setStatus">{{status.type}}</option>
           </select>
