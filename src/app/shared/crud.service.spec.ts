@@ -16,7 +16,6 @@ describe('CRUDService', () => {
   let service: CRUDService;
   let afs: AngularFirestore;
   const data = from(Books);
-<<<<<<< Updated upstream
   const data2 = from(Users);
 
   const insideCollection = jasmine.createSpyObj('collection', [
@@ -52,9 +51,7 @@ describe('CRUDService', () => {
   insideCollection.doc.and.returnValue(insideDocs);
   insideDocs.get.and.returnValue(data);
   insideDocs2.get.and.returnValue(data2);
-=======
   let fixture: ComponentFixture<CRUDService>;
->>>>>>> Stashed changes
 
 
   beforeEach(async () => {
@@ -69,7 +66,7 @@ describe('CRUDService', () => {
   });
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [{ provide: AngularFirestore, useValue: fakeAfs }],
+      providers: [{ provide: AngularFirestore}],
     });
     afs = TestBed.inject(AngularFirestore);
     service = TestBed.inject(CRUDService);
@@ -79,45 +76,6 @@ describe('CRUDService', () => {
     expect(service).toBeTruthy();
   });
 
-  it('should get one book', () => {
-    let spy = spyOn(service, 'getOneBook').and.returnValue(EMPTY);
-    service.getOneBook('1').subscribe();
-
-    expect(spy).toHaveBeenCalledWith('1');
-  });
-<<<<<<< Updated upstream
-
-  it('should get all books', (done: DoneFn) => {
-    let data: Array<any> = [];
-
-    service.getBooks().subscribe((book) => {
-      data.push(book);
-      done();
-    });
-    expect(data).toEqual(Books);
-  });
-
-  it('should add book to firebase', (done: DoneFn) => {
-    let payload: Book = {
-      id: 'testId',
-      bookid: 'testbook',
-      name: 'testname',
-      status: 'teststatus',
-      published: 'testdate',
-      author: 'testauthor',
-    }
-
-    let data: Array<any> = [];
-    service.addBook(payload).subscribe((paylaod)=>{
-
-      data.push(paylaod);
-      data.push(payload);
-      done();
-    })
-    
-    expect(data).toContain(payload);
-
-  })
   it('should remove book from firebase', (done: DoneFn) => {
     let payload = Books[0];
 
@@ -130,8 +88,7 @@ describe('CRUDService', () => {
     
     expect(data).not.toContain(payload);
 
-  })
-
+  });
 
   it('should update one book', () => {
     let data = Books;
@@ -146,7 +103,7 @@ describe('CRUDService', () => {
     let spy = spyOn(service, 'getBorrowedBooks').and.returnValue(EMPTY);
     service.getBorrowedBooks();
     expect(spy).toHaveBeenCalled();
-  })
+  });
 
   it('should get all user borrowed books',()  => {
     let data2 = Users;
@@ -154,6 +111,7 @@ describe('CRUDService', () => {
     service.getUserBorrowedBooks(data2[0].id);
     expect(spy).toHaveBeenCalledWith(data2[0].id);
   });
+
+
 });
-=======
->>>>>>> Stashed changes
+
